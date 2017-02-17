@@ -1,8 +1,10 @@
 # SMC_Multi_Testing
 A Sequential Computation Algorithm For Bayesian Multiple Testing
+
 A Demo code with simulated data，written in MatLab R2015a
+
 Version 1.0, Feb 1, 2017
-Copyright (c) 2017 by Bin Liu. 
+Copyright (c) 2017 by Bin Liu (Email: bins@ieee.org. Personal Website:https://www.researchgate.net/profile/Bin_Liu49 ). 
 
 Main function
      main_SMC - An ad hoc designed SMC algorithm for Bayesian multiple testing.
