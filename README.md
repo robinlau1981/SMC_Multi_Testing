@@ -1,6 +1,6 @@
 # SMC_Multi_Testing
 A Sequential Computation Algorithm For Bayesian Multiple Testing
-A Demo code with simulation data
+A Demo code with simulated data，written in MatLab R2015a
 Version 1.0, Feb 1, 2017
 Copyright (c) 2017 by Bin Liu. 
 
