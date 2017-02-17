@@ -11,16 +11,17 @@ load data_simulated; % load dataset that has been generated or generate the data
 % wsuccess=1./(1+exp(-psi)); % the prior probability that a test statistic is a signal (alternative hypothesis)
 % % Some theta's are signals, most are noise
 % gammatrue=binornd(ones(N,1),wsuccess,N,1); % generate the true hypotheses in the simulation. 1: alternative; 0: null
+disp('number of 0s in gammatrue');
+sum(gammatrue==0)
+disp('number of 1s in gammatrue');
+sum(gammatrue==1)
 % % Density of signals
 % thetatrue = normrnd(3,0.5,N,1);
 % ind=find(gammatrue==0);
 % thetatrue(ind)=zeros(length(ind),1);
 % z=normrnd(thetatrue,1); % simulate the test statistics for use
 %% Now the generation of simulated data has been completed
-disp('number of 0s in gammatrue');
-sum(gammatrue==0)
-disp('number of 1s in gammatrue');
-sum(gammatrue==1)
+
 
 %% Preparation for performing SMC
 ps=1e4; % particle size of importance sampling 
@@ -50,7 +51,8 @@ a=sqrt(1-b^2);
 %% SMC sampling process begin
 for t=1:N
     t/N
-    %% weighting step    
+    %% weighting step
+    
     for i=1:ps
         f0(i) = dnorm(z(t), M0(i).mu, M0(i).sig);
         f1(i) = densitynormix(z(t), M0(i).sig.^2, M1(i).weights, M1(i).means, M1(i).variance);        
@@ -129,20 +131,20 @@ ind =find(Res.BF>(1-Q2)/Q2);
 guess(ind)=ones(length(ind),1);
  
 table(1,1)=length(find(gammatrue==0 & guess==0 ));
-table(1,2)=length(find(gammatrue==0 & guess==1 ));% false positives
+table(1,2)=length(find(gammatrue==0 & guess==1 ));%
 table(2,1)=length(find(gammatrue==1 & guess==0 ));
-table(2,2)=length(find(gammatrue==1 & guess==1 ));% correct detections
+table(2,2)=length(find(gammatrue==1 & guess==1 ));
 
 correct_findings=find(gammatrue==1 & guess==1 );
 wrong_findings=find(gammatrue==0 & guess==1 );
-%% show the number of detections and errors 
-table 
+% show the number of detections and errors 
+table % show the number of detections and errors 
 
 %% Plot inference results
 figure,
 histogram(betapar(:,1), 20,'Normalization','pdf');hold on;
-plot([betatrue(1) betatrue(1)],[0 5.5],'r','LineWidth',4);hold off;axis([-4.2 -2.4 0 5.5]);
-xlabel('\beta_0'); ylabel('pdf estimate');grid on; hold off;
+plot([betatrue(1) betatrue(1)],[0 5.5],'r','LineWidth',4);hold off;axis([-4.2 -2.4 0 5.5]);grid on
+hold off;
 
 figure,plot(1:t,beta_est(:,1),1:t,betatrue(1)*ones(1,t),'r','LineWidth',2);grid on;
 xlabel('t');ylabel('\beta_0');
