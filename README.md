@@ -6,10 +6,10 @@ A Demo code with simulated data，written in MatLab R2015a
 Version 1.0, Feb 1, 2017
 Copyright (c) 2017 by Bin Liu (Email: bins@ieee.org. Personal Website:https://www.researchgate.net/profile/Bin_Liu49 ). 
 
-Main function
-     main_SMC - An ad hoc designed SMC algorithm for Bayesian multiple testing.
+Main function:
+     main_SMC.m - An ad hoc designed SMC algorithm for Bayesian multiple testing.
      
-Data files
+Data files:
     data_simulated.mat - Example data z (test statistics) and X (covariates) 
 
 We have a paper describing the algorithm in details with its application for neural interaction detection 
