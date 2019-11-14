@@ -13,7 +13,25 @@ Data files:
     data_simulated.mat - Example data z (test statistics) and X (covariates) 
 
 We have a paper describing the algorithm in details with its application for neural interaction detection 
-with real data analysis. If you use the code in your work, please cite our paper as follows
+with real data analysis. 
 
-Bin Liu, Giuseppe Vinci, Adam C. Snyder, Matthew A. Smith and Robert E. Kass, A Sequential Scheme for Large 
-Scale Bayesian Multiple Testing, submitted to SIGKDD 2017.
+@inproceedings{liu2018sequential,
+
+  title={Sequential Monte Carlo Method for Bayesian Multiple Testing of Pairwise Interactions among Large Number of Neurons},
+  
+  author={Liu, Bin and Vinci, Giuseppe and Snyder, Adam C and Kass, Robert E},
+  
+  booktitle={2018 14th International Conference on Natural Computation, Fuzzy Systems and Knowledge Discovery (ICNC-FSKD)},
+  
+  pages={1115--1121},
+  
+  year={2018},
+  
+  organization={IEEE}
+}
+
+If you use the code in your work, please cite the above paper.
+
+Good luck!
+
+Bin
